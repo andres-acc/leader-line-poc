@@ -1,0 +1,19 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .option { 
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+    text-decoration: none;
+    transition: all 300ms;
+
+    &:hover {
+      background-color: #333;
+      color: white;
+    }
+  }
+}

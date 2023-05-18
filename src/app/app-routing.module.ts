@@ -3,8 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { OutsideLinesComponent } from './screens/outside-lines/outside-lines.component';
 import { BasicComponent } from './components/basic/basic.component';
 import { OutsideLinesAutomaticComponent } from './screens/outside-lines-automatic/outside-lines-automatic.component';
+import { MenuComponent } from './screens/menu/menu.component';
 
 const routes: Routes = [
+  {
+    path: 'menu',
+    component: MenuComponent
+  },
   {
     path: 'outside-lines',
     component: OutsideLinesComponent
@@ -20,7 +25,7 @@ const routes: Routes = [
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'outside-lines'
+    redirectTo: 'menu'
   } 
 ];
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import * as LeaderLine from 'leader-line-new';
 import { mockOutsideLinesAutomatic } from 'src/app/constants/data.mock';
 
@@ -7,7 +7,7 @@ import { mockOutsideLinesAutomatic } from 'src/app/constants/data.mock';
   templateUrl: './outside-lines-automatic.component.html',
   styleUrls: ['./outside-lines-automatic.component.scss']
 })
-export class OutsideLinesAutomaticComponent {
+export class OutsideLinesAutomaticComponent implements  AfterViewInit, OnDestroy {
   groups = mockOutsideLinesAutomatic;
   lines: LeaderLine[] = [];
 
@@ -61,6 +61,12 @@ export class OutsideLinesAutomaticComponent {
       group.forEach((line: any) => {
         this.drawLine(line.source, line.target, line.x, line.direction, line?.gravity); 
       })
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.lines.forEach(line => {
+      line.remove();
     })
   }
 

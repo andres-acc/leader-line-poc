@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import * as LeaderLine from 'leader-line-new';
 import { mockOutsideLines } from 'src/app/constants/data.mock';
 
@@ -7,7 +7,7 @@ import { mockOutsideLines } from 'src/app/constants/data.mock';
   templateUrl: './outside-lines.component.html',
   styleUrls: ['./outside-lines.component.scss']
 })
-export class OutsideLinesComponent implements AfterViewInit {
+export class OutsideLinesComponent implements AfterViewInit, OnDestroy {
   groups = mockOutsideLines;
   lines: LeaderLine[] = [];
 
@@ -25,6 +25,12 @@ export class OutsideLinesComponent implements AfterViewInit {
       group.forEach(line => {
         this.drawLine(line.source, line.target); 
       })
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.lines.forEach(line => {
+      line.remove();
     })
   }
 

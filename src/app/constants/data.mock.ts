@@ -93,3 +93,55 @@ export const mockOutsideLines = [
     ]
   }
 ];
+
+export const mockOutsideLinesAutomatic = [
+  {
+    id: 'group1',
+    items: [
+      'item1',
+      'item2'
+    ],
+    connections: [
+      'group2',
+      'group3',
+      'group4'
+    ]
+  },
+  {
+    id: 'group2',
+    items: [
+      'item1',
+      'item2',
+      'item3',
+      'item4'
+    ],
+    connections: [
+      'group3'
+    ]
+  },
+  {
+    id: 'group3',
+    items: [
+      'item1',
+      'item2',
+      'item3',
+      'item4',
+    ],
+    connections: [
+      'group1',
+      'group2',
+      'group4'
+    ]
+  },
+  {
+    id: 'group4',
+    items: [
+      'item1'
+    ],
+    connections: [
+      'group3',
+      'group1'
+    ]
+  }
+];
+

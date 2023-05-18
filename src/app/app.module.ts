@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { OutsideLinesComponent } from './screens/outside-lines/outside-lines.component';
 import { BaseBoxComponent } from './components/base-box/base-box.component';
 import { BasicComponent } from './components/basic/basic.component';
+import { OutsideLinesAutomaticComponent } from './screens/outside-lines-automatic/outside-lines-automatic.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OutsideLinesComponent,
     BaseBoxComponent,
-    BasicComponent
+    BasicComponent,
+    OutsideLinesAutomaticComponent
   ],
   imports: [
     BrowserModule,

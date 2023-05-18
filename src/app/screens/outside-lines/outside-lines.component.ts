@@ -21,14 +21,14 @@ export class OutsideLinesComponent implements AfterViewInit {
       })
     });
 
-    diagramConnection.forEach((group, i) => {
+    diagramConnection.forEach((group) => {
       group.forEach(line => {
-        this.drawLine(line.source, line.target, i); 
+        this.drawLine(line.source, line.target); 
       })
     })
   }
 
-  drawLine(source: string, target: { id: string, x: string[], y: string[], gravity: number}, index: number): void {
+  drawLine(source: string, target: { id: string, x: string[], y: string[], gravity: number}): void {
     const startElement = document.getElementById(source);
     const endElement = document.getElementById(target.id);
     if(startElement && endElement) {

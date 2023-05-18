@@ -3,10 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { OutsideLinesComponent } from './screens/outside-lines/outside-lines.component';
+import { BaseBoxComponent } from './components/base-box/base-box.component';
+import { BasicComponent } from './components/basic/basic.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OutsideLinesComponent,
+    BaseBoxComponent,
+    BasicComponent
   ],
   imports: [
     BrowserModule,

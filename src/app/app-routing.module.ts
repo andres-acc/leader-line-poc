@@ -4,6 +4,7 @@ import { OutsideLinesComponent } from './screens/outside-lines/outside-lines.com
 import { BasicComponent } from './components/basic/basic.component';
 import { OutsideLinesAutomaticComponent } from './screens/outside-lines-automatic/outside-lines-automatic.component';
 import { MenuComponent } from './screens/menu/menu.component';
+import { ModelApproachComponent } from './screens/model-approach/model-approach.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'basic',
     component: BasicComponent
+  },
+  {
+    path: 'model-grid',
+    component: ModelApproachComponent
   },
   {
     path: '**',

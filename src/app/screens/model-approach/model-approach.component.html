@@ -1,0 +1,13 @@
+<section class="diagram" id='container'>
+  <div *ngFor="let group of groups; let i = index" class="group-box" [id]="group.id">
+    <div 
+      *ngFor="let subgroup of group.subgroups; let j = index" 
+      class="sub-group-box" 
+      [id]="subgroup.id"
+      [style.grid-row]="subgroup.row ? subgroup.row : 'auto'"
+      [style.flex-direction]="subgroup.itemsDirection ? subgroup.itemsDirection : 'row'"
+    >
+      <div *ngFor="let item of subgroup.items" class="item"></div>
+    </div>
+  </div>
+</section>

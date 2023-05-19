@@ -1,0 +1,30 @@
+.diagram {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-flow: row;
+
+  .group-box {
+    align-self: flex-start;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row;
+
+    .sub-group-box {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid black;
+      margin: 30px;
+      
+      .item {
+        width: 50px;
+        height: 50px;
+        border: 2px solid black;
+        margin: 10px;
+      }
+    }
+  }
+}

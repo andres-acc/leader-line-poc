@@ -170,3 +170,120 @@ export const mockOutsideLinesAutomatic = [
   }
 ];
 
+export const mockLinesGrid = [
+  {
+    id: 'source',
+    label: 'SOURCE',
+    subgroups: [
+      {
+        label: 'Produced Water',
+        id: 'produced_water',
+        itemsDirection: 'column',
+        items: ['Internal', 'External'],
+        connections: [
+          'disposal',
+          'treatment'
+        ],
+        row: '1/3'
+      },
+      {
+        label: 'Brackish Water Internal',
+        id: 'brackish_water_internal',
+        items: ['Internal'],
+        connections: [
+          'internal_brackish_ponds'
+        ]
+      },
+      {
+        label: 'Brackish Water External',
+        id: 'brackish_water_external',
+        items: ['External'],
+        connections: [
+          'external_brackish_ponds'
+        ]
+      },
+      {
+        label: 'Fresh Water',
+        id: 'fresh_water',
+        items: ['Fresh Source 1'],
+        connections: [
+          'cementing'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'process',
+    label: 'PROCESS',
+    subgroups: [
+      {
+        label: 'Treatment',
+        id: 'treatment',
+        items: ['Recycling Facility'],
+        connections: [
+          'recycling_ponds'
+        ],
+        row: '2/3'
+      },
+    ]
+  },
+  {
+    id: 'store',
+    label: 'STORE',
+    subgroups: [
+      {
+        label: 'Recycling Ponds',
+        id: 'recycling_ponds',
+        items: ['Recycling Pond 1', 'Recycling Pond 2', 'Recycling Pond 3'],
+        connections: [
+          'demand_subgroup'
+        ],
+        row: '2/3'
+      },
+      {
+        label: 'Internal Brackish Ponds',
+        id: 'internal_brackish_ponds',
+        items: ['Brackish Pond Int 1', 'Brackish Pond Int 2'],
+        connections: [
+          'demand_subgroup'
+        ],
+        row: '3/4'
+      },
+      {
+        label: 'External Brackish Ponds',
+        id: 'external_brackish_ponds',
+        items: ['Brackish Pond Ext 1', 'Brackish Pond Ext 2'],
+        connections: [
+          'demand_subgroup'
+        ],
+        row: '4/5'
+      },
+    ]
+  },
+  {
+    id: 'demand',
+    label: 'DEMAND',
+    subgroups: [
+      {
+        label: 'Disposal',
+        id: 'disposal',
+        items: ['Disposal'],
+        connections: []
+      },
+      {
+        label: 'Demand',
+        id: 'demand_subgroup',
+        itemsDirection: 'column',
+        items: ['Frac 1', 'Drill 1', 'Frac 2', 'Drill 2'],
+        connections: [],
+        row: '2/5'
+      },
+      {
+        label: 'Cementing',
+        id: 'cementing',
+        items: ['Cementing 1'],
+        connections: []
+      },
+    ]
+  }
+];

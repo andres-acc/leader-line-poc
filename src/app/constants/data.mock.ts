@@ -98,8 +98,12 @@ export const mockOutsideLinesAutomatic = [
   {
     id: 'group1',
     items: [
-      'item1',
-      'item2'
+      {
+        id: 'item1'
+      },
+      {
+        id: 'item2'
+      }
     ],
     connections: [
       'group2',
@@ -110,10 +114,18 @@ export const mockOutsideLinesAutomatic = [
   {
     id: 'group2',
     items: [
-      'item1',
-      'item2',
-      'item3',
-      'item4'
+      {
+        id: 'item1'
+      },
+      {
+        id: 'item2'
+      },
+      {
+        id: 'item3'
+      },
+      {
+        id: 'item4'
+      }
     ],
     connections: [
       'group3'
@@ -122,10 +134,21 @@ export const mockOutsideLinesAutomatic = [
   {
     id: 'group3',
     items: [
-      'item1',
-      'item2',
-      'item3',
-      'item4',
+      {
+        id: 'item1'
+      },
+      {
+        id: 'item2'
+      },
+      {
+        id: 'item3'
+      },
+      {
+        id: 'item4',
+        connection: [
+          'item2'
+        ]
+      }
     ],
     connections: [
       'group1',
@@ -136,7 +159,9 @@ export const mockOutsideLinesAutomatic = [
   {
     id: 'group4',
     items: [
-      'item1'
+      {
+        id: 'item1'
+      },
     ],
     connections: [
       'group3',

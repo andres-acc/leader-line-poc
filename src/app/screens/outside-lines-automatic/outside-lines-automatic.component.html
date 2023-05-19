@@ -1,5 +1,5 @@
 <section class="diagram" id='container'>
   <div *ngFor="let group of groups" class="group-box" [id]="group.id">
-    <div *ngFor="let item of group.items" class="item"></div>
+    <div *ngFor="let item of group.items" class="item" [id]="getItemId(group.id, item.id)"></div>
   </div>
 </section>

@@ -1,5 +1,6 @@
 <section class="diagram" id='container'>
   <div *ngFor="let group of groups; let i = index" class="group-box" [id]="group.id">
+    <h2 class="group-label">{{group.label}}</h2>
     <div 
       *ngFor="let subgroup of group.subgroups; let j = index" 
       class="sub-group-box" 
@@ -7,7 +8,11 @@
       [style.grid-row]="getGridValue(subgroup)"
       [style.flex-direction]="subgroup.itemsDirection ? subgroup.itemsDirection : 'row'"
     >
-      <div *ngFor="let item of subgroup.items" class="item">
+      <p class="subgroup-label">{{subgroup.label}}</p>
+      <div *ngFor="let item of subgroup.items">
+        <div class="item">
+          <p>{{item}}</p>
+        </div>
       </div>
     </div>
   </div>

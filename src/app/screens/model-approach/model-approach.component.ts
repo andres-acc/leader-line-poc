@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import * as LeaderLine from 'leader-line-new';
-import { mockLinesGrid } from 'src/app/constants/data.mock';
+import { mockLinesGrid, upstreamMockGrid } from 'src/app/constants/data.mock';
 
 @Component({
   selector: 'app-model-approach',
@@ -8,7 +8,7 @@ import { mockLinesGrid } from 'src/app/constants/data.mock';
   styleUrls: ['./model-approach.component.scss']
 })
 export class ModelApproachComponent implements AfterViewInit, OnDestroy {
-  groups: any[] = mockLinesGrid;
+  groups: any[] = upstreamMockGrid;
   lines: LeaderLine[] = [];
 
   ngAfterViewInit(): void {

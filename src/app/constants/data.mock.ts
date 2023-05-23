@@ -293,3 +293,92 @@ export const mockLinesGrid = [
     ]
   }
 ];
+
+export const upstreamMockGrid = [
+  {
+    id: 'source',
+    label: 'SOURCE',
+    subgroups: [
+      {
+        label: 'Produced Water',
+        id: 'produced_water',
+        itemsDirection: 'column',
+        items: ['Internal', 'External'],
+        connections: [
+          'disposal',
+          'treatment'
+        ],
+        start: '1',
+        length: '2'
+      },
+      {
+        label: 'Brackish Water',
+        id: 'brackish_water',
+        itemsDirection: 'column',
+        start: '3',
+        length: '3',
+        items: ['Internal', 'External'],
+        connections: [
+          'brackish_ponds'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'process',
+    label: 'PROCESS',
+    subgroups: [
+      {
+        label: 'Treatment',
+        id: 'treatment',
+        items: ['Recycling Facility'],
+        connections: ['recycling_ponds'],
+        start: '2',
+        length: '1'
+      }
+    ]
+  },
+  {
+    id: 'store',
+    label: 'STORE',
+    subgroups: [
+      {
+        label: 'Recycling Ponds',
+        id: 'recycling_ponds',
+        items: ['Recycling Pond North 1', 'Recycling Pond North 2', 'Recycling Pond South 1'],
+        connections: ['operative_demand'],
+        start: '2',
+        length: '1'
+      },
+      {
+        label: 'Brackish Ponds',
+        id: 'brackish_ponds',
+        items: ['Brackish Pond North 1', 'Brackish Pond North 2', 'Brackish Pond South 1', 'Brackish Pond South 2'],
+        connections: ['operative_demand'],
+        start: '3',
+        length: '3'
+      }
+    ]
+  },
+  {
+    id: 'demand',
+    label: 'DEMAND',
+    subgroups: [
+      {
+        label: 'Disposal',
+        id: 'disposal',
+        items: ['Disposal'],
+        connections: []
+      },
+      {
+        label: 'Operative Demand',
+        id: 'operative_demand',
+        itemsDirection: 'column',
+        items: ['Frac North', 'Drill North', 'Frac South', 'Drill South', 'Selling'],
+        connections: [],
+        start: '2',
+        length: '4'
+      }
+    ]
+  }
+]

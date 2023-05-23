@@ -4,10 +4,11 @@
       *ngFor="let subgroup of group.subgroups; let j = index" 
       class="sub-group-box" 
       [id]="subgroup.id"
-      [style.grid-row]="subgroup.row ? subgroup.row : 'auto'"
+      [style.grid-row]="getGridValue(subgroup)"
       [style.flex-direction]="subgroup.itemsDirection ? subgroup.itemsDirection : 'row'"
     >
-      <div *ngFor="let item of subgroup.items" class="item"></div>
+      <div *ngFor="let item of subgroup.items" class="item">
+      </div>
     </div>
   </div>
 </section>

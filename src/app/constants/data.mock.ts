@@ -184,7 +184,8 @@ export const mockLinesGrid = [
           'disposal',
           'treatment'
         ],
-        row: '1/3'
+        start: '1',
+        length: '2'
       },
       {
         label: 'Brackish Water Internal',
@@ -223,7 +224,8 @@ export const mockLinesGrid = [
         connections: [
           'recycling_ponds'
         ],
-        row: '2/3'
+        start: '2',
+        length: '1',
       },
     ]
   },
@@ -238,7 +240,8 @@ export const mockLinesGrid = [
         connections: [
           'demand_subgroup'
         ],
-        row: '2/3'
+        start: '2',
+        length: '1'
       },
       {
         label: 'Internal Brackish Ponds',
@@ -247,7 +250,8 @@ export const mockLinesGrid = [
         connections: [
           'demand_subgroup'
         ],
-        row: '3/4'
+        start: '3',
+        length: '1',
       },
       {
         label: 'External Brackish Ponds',
@@ -256,7 +260,8 @@ export const mockLinesGrid = [
         connections: [
           'demand_subgroup'
         ],
-        row: '4/5'
+        start: '4',
+        length: '1',
       },
     ]
   },
@@ -276,7 +281,8 @@ export const mockLinesGrid = [
         itemsDirection: 'column',
         items: ['Frac 1', 'Drill 1', 'Frac 2', 'Drill 2'],
         connections: [],
-        row: '2/5'
+        start: '2',
+        length: '3'
       },
       {
         label: 'Cementing',

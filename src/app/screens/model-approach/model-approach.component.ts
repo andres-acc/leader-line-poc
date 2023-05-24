@@ -25,31 +25,9 @@ export class ModelApproachComponent implements AfterViewInit, OnDestroy {
 
     diagramConnection.forEach(group => {
       group.forEach((connection: any) => {
-        const diagramConnectionFlat = diagramConnection.flatMap(t => t);
-        const sources = diagramConnectionFlat.filter(a => a.source === connection.source);
-        const targets = diagramConnectionFlat.filter(a => a.target === connection.target);
-        const sourceY = sources.length > 1 ? this.getSourceYPosition(connection, diagramConnectionFlat) : '';
-        const targetY = targets.length > 1 ? this.getTargetYPosition(connection, diagramConnectionFlat) : '';
-        this.drawRowLine(connection.source, connection.target, sourceY, targetY);
+        this.drawRowLine(connection.source, connection.target);
       });
     })
-  }
-
-  getSourceYPosition(connection: any, diagramConnection: any): string {
-    const sources = diagramConnection.filter((a: any) => a.source === connection.source);
-    const divide = 100 / sources.length;
-    const origins = Array.from({length: sources.length}, (_, x) => (x * divide) + (divide / 2));
-    const index = sources.findIndex((a: any) => a.target === connection.target);
-    return `${origins[index]}%`;
-  }
-  
-  getTargetYPosition(connection: any, diagramConnection: any): string {
-    const targets = diagramConnection.filter((a: any) => a.target === connection.target);
-    const divide = 100 / targets.length;
-    const origins = Array.from({length: targets.length}, (_, x) => (x * divide) + (divide / 2));
-    const index = targets.findIndex((a: any) => a.source === connection.source); 
-    
-    return `${origins[index]}%`;
   }
 
   ngOnDestroy(): void {
@@ -58,17 +36,59 @@ export class ModelApproachComponent implements AfterViewInit, OnDestroy {
     })
   }
 
-  drawRowLine(source: string, target: string, sourceY: string, targetY: string): void {
+  drawRowLine(source: string, target: string): void {
     const startElement = document.getElementById(source);
     const endElement = document.getElementById(target);
     if(startElement && endElement) {
       this.lines.push(new LeaderLine(
-          LeaderLine.pointAnchor({ element: startElement, x: '100%', y: sourceY }),
-          LeaderLine.pointAnchor({ element: endElement, x: '0%', y: targetY }),
+          LeaderLine.pointAnchor({ element: startElement, x: '100%', y: this.getSourceYPosition(startElement, endElement)}),
+          LeaderLine.pointAnchor({ element: endElement, x: '0%', y: this.getTargetYPosition(startElement, endElement)}),
           { path: 'straight' }
         )
       )
     }
+  }
+  
+  getSourceYPosition(startElement: HTMLElement, endElement: HTMLElement): number | undefined {
+    const startHeight = startElement.offsetHeight;
+    const startTop = startElement.getBoundingClientRect().top + scrollY;
+    const startBottom = startElement.getBoundingClientRect().bottom + scrollY;
+    const endHeight = endElement.offsetHeight;
+    const endTop = endElement.getBoundingClientRect().top + scrollY;
+    const endBottom = endElement.getBoundingClientRect().bottom + scrollY;
+    
+    if(startTop === endTop) {
+      if(startHeight > endHeight) {
+        return endHeight / 2;
+      } 
+    } else if(startTop < endTop){
+      if(startBottom === endBottom) {
+        return startHeight - (endHeight / 2);
+      }
+    } 
+    
+    return undefined;
+  }
+  
+  getTargetYPosition(startElement: HTMLElement, endElement: HTMLElement): number | undefined {
+    const startHeight = startElement.offsetHeight;
+    const startTop = startElement.getBoundingClientRect().top + scrollY;
+    const startBottom = startElement.getBoundingClientRect().bottom + scrollY;
+    const endHeight = endElement.offsetHeight;
+    const endTop = endElement.getBoundingClientRect().top + scrollY;
+    const endBottom = endElement.getBoundingClientRect().bottom + scrollY;
+    
+    if(startTop === endTop) {
+      if(endHeight > startHeight) {
+        return startHeight / 2;
+      } 
+    } else if(startTop > endTop) {
+      if(startBottom === endBottom) {
+        return endHeight - (startHeight / 2);
+      }
+    } 
+
+    return undefined;
   }
 
   getGridValue(subgroup: any): string {

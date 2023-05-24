@@ -7,6 +7,7 @@
       [id]="subgroup.id"
       [style.grid-row]="getGridValue(subgroup)"
       [style.flex-direction]="subgroup.itemsDirection ? subgroup.itemsDirection : 'row'"
+      [style.flex-wrap]="subgroup.itemsWrap ? 'wrap' : 'nowrap'"
     >
       <p class="subgroup-label">{{subgroup.label}}</p>
       <div *ngFor="let item of subgroup.items">

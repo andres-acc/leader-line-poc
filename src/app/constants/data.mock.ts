@@ -353,6 +353,7 @@ export const upstreamMockGrid = [
       {
         label: 'Brackish Ponds',
         id: 'brackish_ponds',
+        itemsWrap: true,
         items: ['Brackish Pond North 1', 'Brackish Pond North 2', 'Brackish Pond South 1', 'Brackish Pond South 2'],
         connections: ['operative_demand'],
         start: '3',

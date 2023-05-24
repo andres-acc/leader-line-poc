@@ -5,6 +5,7 @@ import { BasicComponent } from './components/basic/basic.component';
 import { OutsideLinesAutomaticComponent } from './screens/outside-lines-automatic/outside-lines-automatic.component';
 import { MenuComponent } from './screens/menu/menu.component';
 import { ModelApproachComponent } from './screens/model-approach/model-approach.component';
+import { LibraryImplementationComponent } from './screens/library-implementation/library-implementation.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'model-grid',
     component: ModelApproachComponent
+  },
+  {
+    path: 'library-implementation',
+    component: LibraryImplementationComponent
   },
   {
     path: '**',

@@ -1,0 +1,48 @@
+.diagram {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-flow: row;
+
+  .group-box {
+    align-self: flex-start;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+
+    .group-label {
+      position: absolute;
+      width: 100%;
+      top: 0;
+    }
+
+    .sub-group-box {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid black;
+      margin: 15px 30px 15px 30px;
+      position: relative;
+      padding-top: 20px;
+
+      .subgroup-label {
+        position: absolute;
+        top: -10px;
+      }
+      
+      .item {
+        width: 80px;
+        height: 80px;
+        border: 2px solid black;
+        margin: 10px;
+        text-align: center;
+      }
+    }
+  }
+}

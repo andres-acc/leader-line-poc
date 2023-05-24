@@ -1,0 +1,12 @@
+{
+  "name": "wm-leader-line",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^15.2.0"
+  },
+  "dependencies": {
+    "leader-line-new": "^1.1.9",
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

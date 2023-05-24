@@ -8,6 +8,8 @@ import { BasicComponent } from './components/basic/basic.component';
 import { OutsideLinesAutomaticComponent } from './screens/outside-lines-automatic/outside-lines-automatic.component';
 import { MenuComponent } from './screens/menu/menu.component';
 import { ModelApproachComponent } from './screens/model-approach/model-approach.component';
+import { LibraryImplementationComponent } from './screens/library-implementation/library-implementation.component';
+import { WmLeaderLineModule } from 'wm-leader-line';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { ModelApproachComponent } from './screens/model-approach/model-approach.
     BasicComponent,
     OutsideLinesAutomaticComponent,
     MenuComponent,
-    ModelApproachComponent
+    ModelApproachComponent,
+    LibraryImplementationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    WmLeaderLineModule
   ],
   providers: [],
   bootstrap: [AppComponent]

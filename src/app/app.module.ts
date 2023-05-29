@@ -10,6 +10,8 @@ import { MenuComponent } from './screens/menu/menu.component';
 import { ModelApproachComponent } from './screens/model-approach/model-approach.component';
 import { LibraryImplementationComponent } from './screens/library-implementation/library-implementation.component';
 import { WmLeaderLineModule } from 'wm-leader-line';
+import { BarrancaExampleComponent } from './screens/barranca-example/barranca-example.component';
+import { BarrancaNodeComponent } from './components/barranca-node/barranca-node.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { WmLeaderLineModule } from 'wm-leader-line';
     OutsideLinesAutomaticComponent,
     MenuComponent,
     ModelApproachComponent,
-    LibraryImplementationComponent
+    LibraryImplementationComponent,
+    BarrancaExampleComponent,
+    BarrancaNodeComponent
   ],
   imports: [
     BrowserModule,

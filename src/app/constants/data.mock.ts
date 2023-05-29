@@ -179,7 +179,16 @@ export const mockLinesGrid = [
         label: 'Produced Water',
         id: 'produced_water',
         itemsDirection: 'column',
-        items: ['Internal', 'External'],
+        items: [
+          {
+            id: 'source_internal',
+            label: 'Internal'
+          }, 
+          {
+            id: 'source_external',
+            label: 'External'
+          }
+        ],
         connections: [
           'disposal',
           'treatment'
@@ -190,7 +199,12 @@ export const mockLinesGrid = [
       {
         label: 'Brackish Water Internal',
         id: 'brackish_water_internal',
-        items: ['Internal'],
+        items: [
+          {
+            id: 'brackish_water_internal_internal',
+            label: 'Internal'
+          }
+        ],
         connections: [
           'internal_brackish_ponds'
         ]
@@ -198,7 +212,12 @@ export const mockLinesGrid = [
       {
         label: 'Brackish Water External',
         id: 'brackish_water_external',
-        items: ['External'],
+        items: [
+          {
+            id: 'brackish_water_external_external',
+            label: 'External'
+          }
+        ],
         connections: [
           'external_brackish_ponds'
         ]
@@ -206,7 +225,12 @@ export const mockLinesGrid = [
       {
         label: 'Fresh Water',
         id: 'fresh_water',
-        items: ['Fresh Source 1'],
+        items: [
+          {
+            id: 'fresh_water_fresh_source_1',
+            label: 'Fresh Source 1'
+          }
+        ],
         connections: [
           'cementing'
         ]
@@ -220,7 +244,12 @@ export const mockLinesGrid = [
       {
         label: 'Treatment',
         id: 'treatment',
-        items: ['Recycling Facility'],
+        items: [
+          {
+            id: 'treatment_recycling_facility',
+            label: 'Recycling Facility'
+          }
+        ],
         connections: [
           'recycling_ponds'
         ],
@@ -236,7 +265,20 @@ export const mockLinesGrid = [
       {
         label: 'Recycling Ponds',
         id: 'recycling_ponds',
-        items: ['Recycling Pond 1', 'Recycling Pond 2', 'Recycling Pond 3'],
+        items: [
+          {
+            id: 'recycling_ponds_recycling_pond_1',
+            label: 'Recycling Pond 1'
+          }, 
+          {
+            id: 'recycling_ponds_recycling_pond_2',
+            label: 'Recycling Pond 2'
+          },
+          {
+            id: 'recycling_ponds_recycling_pond_3',
+            label: 'Recycling Pond 3'
+          }
+        ],
         connections: [
           'demand_subgroup'
         ],
@@ -246,7 +288,16 @@ export const mockLinesGrid = [
       {
         label: 'Internal Brackish Ponds',
         id: 'internal_brackish_ponds',
-        items: ['Brackish Pond Int 1', 'Brackish Pond Int 2'],
+        items: [
+          {
+            id: 'internal_brackish_ponds_brackish_pond_int_1',
+            label: 'Brackish Pond Int 1'
+          },
+          {
+            id: 'internal_brackish_ponds_brackish_pond_int_2',
+            label: 'Brackish Pond Int 2'
+          },
+        ],
         connections: [
           'demand_subgroup'
         ],
@@ -256,7 +307,16 @@ export const mockLinesGrid = [
       {
         label: 'External Brackish Ponds',
         id: 'external_brackish_ponds',
-        items: ['Brackish Pond Ext 1', 'Brackish Pond Ext 2'],
+        items: [
+          {
+            id: 'external_brackish_ponds_brackish_pond_ext_1',
+            label: 'Brackish Pond Ext 1'
+          },
+          {
+            id: 'external_brackish_ponds_brackish_pond_ext_2',
+            label: 'Brackish Pond Ext 2'
+          }
+        ],
         connections: [
           'demand_subgroup'
         ],
@@ -272,14 +332,36 @@ export const mockLinesGrid = [
       {
         label: 'Disposal',
         id: 'disposal',
-        items: ['Disposal'],
+        items: [
+          {
+            id: 'disposal_disposal',
+            label: 'Disposal'
+          }
+        ],
         connections: []
       },
       {
         label: 'Demand',
         id: 'demand_subgroup',
         itemsDirection: 'column',
-        items: ['Frac 1', 'Drill 1', 'Frac 2', 'Drill 2'],
+        items: [
+          {
+            id: 'demand_subgroup_frac_1',
+            label: 'Frac 1'
+          },
+          {
+            id: 'demand_subgroup_drill_1',
+            label: 'Drill 1'
+          },
+          {
+            id: 'demand_subgroup_frac_2',
+            label: 'Frac 2'
+          },
+          {
+            id: 'demand_subgroup_drill_2',
+            label: 'Drill 2'
+          }
+        ],
         connections: [],
         start: '2',
         length: '3'
@@ -287,7 +369,12 @@ export const mockLinesGrid = [
       {
         label: 'Cementing',
         id: 'cementing',
-        items: ['Cementing 1'],
+        items: [
+          {
+            id: 'demand_subgroup_cementing_1',
+            label: 'Cementing 1'
+          }
+        ],
         connections: []
       },
     ]
@@ -382,4 +469,181 @@ export const upstreamMockGrid = [
       }
     ]
   }
-]
+];
+
+export const mockLinesGridLatest = [
+  {
+    id: 'source',
+    label: 'SOURCE',
+    subgroups: [
+      {
+        label: 'Produced Water',
+        id: 'produced_water',
+        itemsDirection: 'column',
+        items: [
+          {
+            id: 'source_internal',
+            label: 'Internal'
+          }, 
+          {
+            id: 'source_external',
+            label: 'External'
+          }
+        ],
+        connections: [
+          'disposal',
+          'treatment'
+        ],
+        start: '1',
+        length: '2'
+      },
+      {
+        label: 'Brackish Water Internal',
+        id: 'brackish_water_internal',
+        itemsWrap: true,
+        items: [
+          {
+            id: 'brackish_water_internal_north',
+            label: 'Internal North'
+          },
+          {
+            id: 'brackish_water_internal_south',
+            label: 'Internal South'
+          },
+          {
+            id: 'brackish_water_external_north',
+            label: 'External North'
+          },
+          {
+            id: 'brackish_water_external_south',
+            label: 'External South'
+          }
+        ],
+        connections: [
+          'brackish_ponds'
+        ]
+      },
+    ]
+  },
+  {
+    id: 'process',
+    label: 'PROCESS',
+    subgroups: [
+      {
+        label: 'Treatment',
+        id: 'treatment',
+        items: [
+          {
+            id: 'treatment_recycling_facility',
+            label: 'Recycling Facility'
+          }
+        ],
+        connections: [
+          'recycling_ponds'
+        ],
+        start: '2',
+        length: '1',
+      },
+    ]
+  },
+  {
+    id: 'store',
+    label: 'STORE',
+    subgroups: [
+      {
+        label: 'Recycling Ponds',
+        id: 'recycling_ponds',
+        items: [
+          {
+            id: 'recycling_ponds_recycling_pond_1',
+            label: 'Recycling Pond 1'
+          }, 
+          {
+            id: 'recycling_ponds_recycling_pond_2',
+            label: 'Recycling Pond 2'
+          },
+          {
+            id: 'recycling_ponds_recycling_pond_3',
+            label: 'Recycling Pond 3'
+          }
+        ],
+        connections: [
+          'demand_subgroup'
+        ],
+        start: '2',
+        length: '1'
+      },
+      {
+        label: 'Brackish Ponds',
+        id: 'brackish_ponds',
+        itemsWrap: true,
+        items: [
+          {
+            id: 'brackish_ponds_brackish_pond_north_1',
+            label: 'Brackish Pond North 1'
+          },
+          {
+            id: 'brackish_ponds_brackish_pond_north_2',
+            label: 'Brackish Pond North 2'
+          },
+          {
+            id: 'brackish_ponds_brackish_pond_south_1',
+            label: 'Brackish Pond South 1'
+          },
+          {
+            id: 'brackish_ponds_brackish_pond_south_2',
+            label: 'Brackish Pond South 2'
+          },
+        ],
+        connections: [
+          'demand_subgroup'
+        ],
+        start: '3',
+        length: '1',
+      },
+    ]
+  },
+  {
+    id: 'demand',
+    label: 'DEMAND',
+    subgroups: [
+      {
+        label: 'Disposal',
+        id: 'disposal',
+        items: [
+          {
+            id: 'disposal_disposal',
+            label: 'Disposal'
+          }
+        ],
+        connections: []
+      },
+      {
+        label: 'Demand',
+        id: 'demand_subgroup',
+        itemsDirection: 'column',
+        items: [
+          {
+            id: 'demand_subgroup_frac_1',
+            label: 'Frac 1'
+          },
+          {
+            id: 'demand_subgroup_drill_1',
+            label: 'Drill 1'
+          },
+          {
+            id: 'demand_subgroup_frac_2',
+            label: 'Frac 2'
+          },
+          {
+            id: 'demand_subgroup_drill_2',
+            label: 'Drill 2'
+          }
+        ],
+        connections: [],
+        start: '2',
+        length: '2'
+      },
+    ]
+  }
+];

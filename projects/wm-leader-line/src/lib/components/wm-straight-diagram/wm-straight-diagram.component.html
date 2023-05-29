@@ -10,10 +10,13 @@
       [style.flex-wrap]="subgroup.itemsWrap ? 'wrap' : 'nowrap'"
     >
       <p class="subgroup-label">{{subgroup.label}}</p>
-      <div *ngFor="let item of subgroup.items">
-        <div class="item">
-          <p>{{item}}</p>
-        </div>
+      <div *ngFor="let item of subgroup.items; let i = index">
+        <ng-content></ng-content>
+        <ng-container
+          *ngIf="contentRef"
+          [ngTemplateOutlet]="contentRef"
+          [ngTemplateOutletContext]="{ $implicit: item }"
+        ></ng-container>
       </div>
     </div>
   </div>

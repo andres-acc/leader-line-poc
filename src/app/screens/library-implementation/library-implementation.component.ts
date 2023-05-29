@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { mockLinesGrid, upstreamMockGrid } from '../../constants/data.mock';
+import { mockLinesGrid, upstreamMockGrid, mockLinesGridLatest } from '../../constants/data.mock';
 
 @Component({
   selector: 'app-library-implementation',
@@ -9,4 +9,5 @@ import { mockLinesGrid, upstreamMockGrid } from '../../constants/data.mock';
 export class LibraryImplementationComponent {
   mockLinesGrid = mockLinesGrid;
   upstreamMockGrid = upstreamMockGrid;
+  mockLinesGridLatest = mockLinesGridLatest;
 }

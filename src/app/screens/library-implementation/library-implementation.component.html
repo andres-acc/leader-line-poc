@@ -1,1 +1,17 @@
-<wm-straight-diagram [groups]="mockLinesGrid"></wm-straight-diagram>
+<wm-straight-diagram [groups]="mockLinesGridLatest" >
+
+  <!-- <app-dowstream *ngIf="..."></app-dowstream>
+  <app-upstream *ngIf="..."></app-upstream> -->
+  <ng-template let-nodeDetail #content>
+    <p>{{nodeDetail.label}}</p>
+    <pre>[{{nodeDetail.id}}]</pre>
+  </ng-template> 
+
+</wm-straight-diagram>
+
+<!-- 
+  <ng-template let-nodeDetail #content>
+    <p>{{nodeDetail.label}}</p>
+    <pre>[{{nodeDetail.id}}]</pre>
+  </ng-template> 
+-->

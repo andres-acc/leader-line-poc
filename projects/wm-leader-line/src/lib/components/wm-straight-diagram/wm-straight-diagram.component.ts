@@ -1,4 +1,12 @@
-import { AfterViewInit, Component, Input, OnDestroy } from '@angular/core';
+import { 
+  AfterViewInit, 
+  Component, 
+  ContentChild, 
+  ElementRef, 
+  Input, 
+  OnDestroy, 
+  TemplateRef 
+} from '@angular/core';
 import * as LeaderLine from 'leader-line-new';
 
 @Component({
@@ -8,6 +16,7 @@ import * as LeaderLine from 'leader-line-new';
 })
 export class StraightDiagramComponent implements AfterViewInit, OnDestroy {
   @Input() groups: any[] = [];
+  @ContentChild('content', {static: false, read: TemplateRef}) contentRef?: TemplateRef<ElementRef>;
   lines: LeaderLine[] = [];
 
   ngAfterViewInit(): void {

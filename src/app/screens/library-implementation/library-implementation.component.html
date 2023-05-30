@@ -1,17 +1,22 @@
-<wm-straight-diagram [groups]="mockLinesGridLatest" >
-
-  <!-- <app-dowstream *ngIf="..."></app-dowstream>
-  <app-upstream *ngIf="..."></app-upstream> -->
-  <ng-template let-nodeDetail #content>
-    <p>{{nodeDetail.label}}</p>
-    <pre>[{{nodeDetail.id}}]</pre>
-  </ng-template> 
-
-</wm-straight-diagram>
-
-<!-- 
-  <ng-template let-nodeDetail #content>
-    <p>{{nodeDetail.label}}</p>
-    <pre>[{{nodeDetail.id}}]</pre>
-  </ng-template> 
--->
+<wm-subgroups-diagram [groups]="mockLinesGridLatest" >
+  <ng-template let-item #content>
+    <div class="water-card" [id]="item.id">
+      <div class="top-card"><img width="30" height="34" class="card-image" src="https://drcuzceaurbw6.cloudfront.net/assets/icons/water-tide.svg"
+          alt="SOURCE_WATER">
+        <div class="variables-container">
+          <div class="variable"><img width="" height="" class="variable-icon" src="https://drcuzceaurbw6.cloudfront.net/assets/icons/input-water.svg"
+              alt="INPUT_FLOW_RATE"><span class="variable-value"> 0 </span>
+            <span id="translate-encapsulation" class="wm-unit">gal/min</span>
+          </div>
+          <div class="variable"><img width="" height="" class="variable-icon" src="https://drcuzceaurbw6.cloudfront.net/assets/icons/water-volume.svg"
+              alt="PARTICIPATION"><span class="variable-value"> 0 </span><span id="translate-encapsulation"
+              class="wm-unit">%</span></div>
+        </div>
+      </div>
+      <div>
+        <div><span translate="" class="card-name card-name-title" title="LAKE_IN"> {{item.label}} </span><button
+            class="card-options"></button></div>
+      </div>
+    </div>
+  </ng-template>
+</wm-subgroups-diagram>

@@ -1,1 +1,20 @@
-<p>barranca-node works!</p>
+<ng-template let-nodeDetail #content>
+  <div class="water-card">
+    <div class="top-card"><img width="30" height="34" class="card-image" src="https://drcuzceaurbw6.cloudfront.net/assets/icons/water-tide.svg"
+        alt="SOURCE_WATER">
+      <div class="variables-container">
+        <div class="variable"><img width="" height="" class="variable-icon" src="https://drcuzceaurbw6.cloudfront.net/assets/icons/input-water.svg"
+            alt="INPUT_FLOW_RATE"><span class="variable-value"> 0 </span>
+          <span id="translate-encapsulation" class="wm-unit">gal/min</span>
+        </div>
+        <div class="variable"><img width="" height="" class="variable-icon" src="https://drcuzceaurbw6.cloudfront.net/assets/icons/water-volume.svg"
+            alt="PARTICIPATION"><span class="variable-value"> 0 </span><span id="translate-encapsulation"
+            class="wm-unit">%</span></div>
+      </div>
+    </div>
+    <div>
+      <div><span translate="" class="card-name card-name-title" title="LAKE_IN"> {{nodeDetail | json}} </span><button
+          class="card-options"></button></div>
+    </div>
+  </div>
+</ng-template>

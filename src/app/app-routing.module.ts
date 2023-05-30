@@ -6,6 +6,7 @@ import { OutsideLinesAutomaticComponent } from './screens/outside-lines-automati
 import { MenuComponent } from './screens/menu/menu.component';
 import { ModelApproachComponent } from './screens/model-approach/model-approach.component';
 import { LibraryImplementationComponent } from './screens/library-implementation/library-implementation.component';
+import { BarrancaExampleComponent } from './screens/barranca-example/barranca-example.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'library-implementation',
     component: LibraryImplementationComponent
+  },
+  {
+    path: 'barranca-library-implementation',
+    component: BarrancaExampleComponent
   },
   {
     path: '**',

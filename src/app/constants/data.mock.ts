@@ -500,7 +500,6 @@ export const mockLinesGridLatest = [
       {
         label: 'Brackish Water Internal',
         id: 'brackish_water_internal',
-        itemsWrap: true,
         items: [
           {
             id: 'brackish_water_internal_north',
@@ -521,7 +520,10 @@ export const mockLinesGridLatest = [
         ],
         connections: [
           'brackish_ponds'
-        ]
+        ],
+        start: '3',
+        length: '2',
+        columns: 2
       },
     ]
   },
@@ -542,7 +544,7 @@ export const mockLinesGridLatest = [
           'recycling_ponds'
         ],
         start: '2',
-        length: '1',
+        length: '1'
       },
     ]
   },
@@ -571,12 +573,12 @@ export const mockLinesGridLatest = [
           'demand_subgroup'
         ],
         start: '2',
-        length: '1'
+        length: '1',
+        columns: 3
       },
       {
         label: 'Brackish Ponds',
         id: 'brackish_ponds',
-        itemsWrap: true,
         items: [
           {
             id: 'brackish_ponds_brackish_pond_north_1',
@@ -599,7 +601,8 @@ export const mockLinesGridLatest = [
           'demand_subgroup'
         ],
         start: '3',
-        length: '1',
+        length: '2',
+        columns: 2
       },
     ]
   },
@@ -619,9 +622,8 @@ export const mockLinesGridLatest = [
         connections: []
       },
       {
-        label: 'Demand',
+        label: 'Operative Demand',
         id: 'demand_subgroup',
-        itemsDirection: 'column',
         items: [
           {
             id: 'demand_subgroup_frac_1',
@@ -642,8 +644,140 @@ export const mockLinesGridLatest = [
         ],
         connections: [],
         start: '2',
-        length: '2'
+        length: '4'
       },
+    ]
+  }
+];
+
+export const barrancaMockLevel1 = [
+  {
+    id: '',
+    label: 'Water Source',
+    subgroups: [
+      {
+        id: 'water_source',
+        label: '',
+        itemsDirection: 'column',
+        items: [
+          {
+            id: 'lake_in',
+            label: 'Lake In'
+          }, 
+          {
+            id: 'river_in',
+            label: 'River In'
+          }
+        ],
+        connections: [
+          'industrial_services'
+        ],
+        start: '1',
+        length: '3'
+      }
+    ]
+  },
+  {
+    id: '',
+    label: 'Industrial Services',
+    subgroups: [
+      {
+        id: 'industrial_services',
+        label: '',
+        itemsDirection: 'column',
+        items: [
+          {
+            id: 'industrial_service_from_refinery',
+            label: 'Industrial Services From Refinery'
+          }
+        ],
+        connections: [
+          'use'
+        ],
+        start: '2',
+        length: '1'
+      }
+    ]
+  },
+  {
+    id: '',
+    label: 'Use',
+    subgroups: [
+      {
+        id: 'use',
+        label: '',
+        itemsDirection: 'row',
+        itemsWrap: true,
+        items: [
+          {
+            id: 'refinery',
+            label: 'Refinery'
+          }, 
+          {
+            id: 'petro_chemical',
+            label: 'Petro Chemical'
+          },
+          {
+            id: 'balance',
+            label: 'Balance'
+          },
+          {
+            id: 'others',
+            label: 'Others'
+          }
+        ],
+        connections: [
+          't_residual_water'
+        ],
+        start: '1',
+        length: '3'
+      }
+    ]
+  },
+  {
+    id: '',
+    label: 'T.Residual Water',
+    subgroups: [
+      {
+        id: 't_residual_water',
+        label: '',
+        itemsDirection: 'column',
+        items: [
+          {
+            id: 'treatment_plant',
+            label: 'Treatment Plant'
+          }
+        ],
+        connections: [
+          'water_destination'
+        ],
+        start: '2',
+        length: '1'
+      }
+    ]
+  },
+  {
+    id: '',
+    label: 'Water Destination',
+    subgroups: [
+      {
+        id: 'water_destination',
+        label: '',
+        itemsDirection: 'column',
+        items: [
+          {
+            id: 'river_out',
+            label: 'River Out'
+          },
+          {
+            id: 'lake_out',
+            label: 'Lake Out'
+          }
+        ],
+        connections: [],
+        start: '1',
+        length: '3'
+      }
     ]
   }
 ];

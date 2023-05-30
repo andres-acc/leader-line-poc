@@ -1,0 +1,85 @@
+.water-card {
+  display: flex;
+  background-color: #f1f2f2;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 110px;
+  justify-content: space-between;
+  padding: 8px;
+  position: relative;
+  width: 130px;
+  margin: 5px;
+
+  .top-card {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+
+    .card-image {
+      margin: auto;
+      width: 23px;
+    }
+
+    .variables-container {
+      align-items: left;
+      display: flex;
+      flex-direction: column;
+      padding: 0 5px;
+
+      .variable {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5px;
+
+        .variable-icon {
+          margin-right: 6px;
+          width: 10px;
+        }
+
+        .variable-value {
+          font-size: 10px;
+          line-height: 12px;
+          letter-spacing: .5px;
+          color: #333;
+        }
+
+        .wm-unit {
+          display: inline-flex;
+        }
+      }
+    }
+  }
+
+  .card-name {
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: .5px;
+    color: #333;
+  }
+
+  .card-name-title {
+    display: block;
+    overflow: hidden;
+    padding-right: 15px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
+  }
+
+  .card-options {
+    background: url(https://drcuzceaurbw6.cloudfront.net/assets/icons/burger.svg) no-repeat;
+    background-position: center;
+    background-size: 12px;
+    bottom: 4px;
+    height: 24px;
+    position: absolute;
+    right: 0;
+    width: 24px;
+  }
+}
